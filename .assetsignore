@@ -1,0 +1,13 @@
+.git
+.git/**
+wrangler.toml
+.assetsignore
+README.md
+CHANGELOG.md
+STRUCTURE.md
+img
+img/**
+index_*.html
+bk-cake3.webp
+bk-dacq-mint.webp
+ubuntu-700.woff2
