@@ -127,7 +127,9 @@ section[id]{ scroll-margin-top:64px; }
 /* ---------- hero ---------- */
 .hero{ padding:clamp(40px,7vw,80px) 0 clamp(56px,8vw,96px); }
 .hero-grid{ display:grid; gap:40px; align-items:center; }
-.hero-logo{ width:min(72%,300px); }
+.hero-cat{ width:min(78%,320px); }
+.hero-cat img{ width:100%; animation:bob 4s ease-in-out infinite; transform-origin:50% 100%; }
+.hero-cat::after{ content:""; display:block; height:1.5px; background:var(--ink); margin-top:-1px; }
 .hero .place{ font-size:.84rem; color:var(--ink-soft); letter-spacing:.04em; margin:22px 0 6px; }
 .hero h1{ font-family:var(--script); font-weight:400; font-size:clamp(1.7rem,4.6vw,2.7rem); line-height:1.45; margin:0 0 14px; }
 .hero .kr-lead{ font-family:var(--kr); color:var(--ink-soft); font-size:1rem; margin:0 0 18px; word-break:keep-all; }
@@ -139,10 +141,11 @@ section[id]{ scroll-margin-top:64px; }
 .sec{ padding:clamp(72px,11vw,120px) 0; }
 .sec.ivory{ background:var(--ivory); }
 .sec-head{ text-align:center; margin-bottom:clamp(30px,5vw,52px); }
-.sec-head h2{ font-family:var(--script); font-weight:400; font-size:clamp(1.6rem,4.2vw,2.5rem); line-height:1.4; margin:0 0 8px; }
-.sec-head p{ font-family:var(--kr); color:var(--ink-soft); margin:0; font-size:.96rem; }
+.sec-head h2{ font-family:var(--script); font-weight:400; font-size:clamp(1.6rem,4.2vw,2.5rem); line-height:1.6; margin:0 0 18px; }
+.sec-head p{ font-family:var(--kr); color:var(--ink-soft); margin:0; font-size:.96rem; line-height:1.6; }
 
 /* ---------- story ---------- */
+.story-h{ font-family:var(--script); font-weight:400; font-size:clamp(1.6rem,4.2vw,2.5rem); line-height:1.6; margin:0 0 clamp(24px,4vw,40px); }
 .story-grid{ display:grid; gap:40px; align-items:center; }
 .story p{ margin:0 0 1em; color:var(--ink-soft); }
 .story p.kr{ font-size:.95rem; line-height:1.85; word-break:keep-all; }
@@ -172,9 +175,7 @@ section[id]{ scroll-margin-top:64px; }
 
 /* ---------- gift ---------- */
 .gift-grid{ display:grid; gap:36px; align-items:center; }
-.perch{ position:relative; max-width:360px; margin:0 auto 0; }
-.perch img{ width:100%; animation:bob 4s ease-in-out infinite; transform-origin:50% 100%; }
-.perch::after{ content:""; display:block; height:1.5px; background:var(--ink); margin-top:-1px; }
+.gift-logo{ max-width:340px; margin:0 auto; }
 @keyframes bob{ 0%,100%{ transform:rotate(0deg); } 50%{ transform:rotate(-2deg) translateY(-3px); } }
 .gift h2{ font-family:var(--script); font-weight:400; font-size:clamp(1.5rem,4vw,2.3rem); line-height:1.4; margin:0 0 12px; }
 .gift p{ color:var(--ink-soft); margin:0 0 .8em; }
@@ -257,7 +258,7 @@ section[id]{ scroll-margin-top:64px; }
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="reveal">
-      <img class="hero-logo" src="bk-logo.webp" alt="Butter Kitten 버터키튼 logo — a tuxedo cat" width="1106" height="993" />
+      <div class="hero-cat"><img src="bk-cat-butter.webp" alt="Butter Kitten illustration — a tuxedo cat hugging a big block of butter" width="900" height="722" /></div>
       <p class="place">DESSERT CAFÉ · GONGNEUNG, SEOUL</p>
       <h1>A warm little dessert shop,<br />baked with heart.</h1>
       <p class="kr-lead">진심을 담은 따뜻한 치유의 디저트 가게, 버터키튼입니다.</p>
@@ -276,13 +277,16 @@ section[id]{ scroll-margin-top:64px; }
 
   <!-- ============ STORY ============ -->
   <section class="sec story" id="story" aria-labelledby="story-h">
-    <div class="wrap story-grid">
+    <div class="wrap">
       <div class="reveal">
         <div class="badge" aria-hidden="true"><span>STORY</span></div>
-        <h2 id="story-h" style="font-family:var(--script);font-weight:400;font-size:clamp(1.6rem,4.2vw,2.5rem);line-height:1.4;margin:0 0 16px">Small as a slice of cake,<br />warm as a sleeping cat.</h2>
-        <p>Butter Kitten is a tiny dessert shop — about the size of a slice of cake. We bake <b>seasonal menus with the season’s ingredients</b>, and little treats that look cute but taste refined.</p>
+        <h2 id="story-h" class="story-h">Small as a slice of cake,<br />warm as a sleeping cat.</h2>
+      </div>
+      <div class="story-grid">
+      <div class="reveal">
+        <p>Butter Kitten is a tiny dessert shop about the size of a slice of cake. We bake <b>seasonal menus with the season’s ingredients</b>, and little treats that look cute but taste refined.</p>
         <p>We hope everyone who visits feels at ease and a little warmer, and that our desserts bring some happiness to the end of your day.</p>
-        <p class="kr">프랑스 밀가루, 고메버터, 비정제원당을 사용하여 맛있고 건강하게 만들고 있습니다. 버터키튼 공간 안에서 느낄 수 있는 포근함과 따스함으로, 오시는 모든 분들의 하루 끝에 행복을 전하는 디저트가 되었으면 합니다.</p>
+        <p class="kr">프랑스 밀가루, 고메버터, 비정제원당을 사용하여 맛있고 건강하게 만들고 있습니다. 버터키튼 공간 안에서 느낄 수 있는 포근함과 따스함으로, 오시는 모든 분들의 하루 끝에 행복을 전하는 디저트가 되었으면 해요.</p>
         <ul class="ingr" aria-label="Our ingredients">
           <li><b>French flour</b><span>프랑스 밀가루</span></li>
           <li><b>Gourmet butter</b><span>고메버터</span></li>
@@ -291,6 +295,7 @@ section[id]{ scroll-margin-top:64px; }
       </div>
       <div class="story-art reveal">
         <img loading="lazy" src="bk-paws.webp" alt="Illustration: many cat paws reaching for a slice of buttered toast marked Butter Kitten" width="1000" height="1000" />
+      </div>
       </div>
     </div>
   </section>
@@ -301,7 +306,7 @@ section[id]{ scroll-margin-top:64px; }
       <div class="sec-head reveal">
         <div class="badge" aria-hidden="true"><span>MENU</span></div>
         <h2 id="menu-h">Baked for little paws</h2>
-        <p>귀엽지만 고급스러운 맛</p>
+        <p>포근하고 따스한 맛</p>
       </div>
       <div class="menu-grid">
         <figure class="item reveal">
@@ -330,11 +335,11 @@ section[id]{ scroll-margin-top:64px; }
   <!-- ============ GIFT ============ -->
   <section class="sec gift" id="gift" aria-labelledby="gift-h">
     <div class="wrap gift-grid">
-      <div class="perch reveal"><img loading="lazy" src="bk-cat-butter.webp" alt="Illustration: a tuxedo cat hugging a big block of butter" width="900" height="722" /></div>
+      <div class="gift-logo reveal"><img loading="lazy" src="bk-logo.webp" alt="Butter Kitten 버터키튼 logo — a tuxedo cat" width="1106" height="993" /></div>
       <div class="reveal">
         <div class="badge" aria-hidden="true"><span>GIFT</span></div>
         <h2 id="gift-h">Wrapped with little paws</h2>
-        <p>Every treat goes home in our paw-print wrap and kitten boxes — ready for a thank-you, a birthday, or just because.</p>
+        <p>Every treat goes home in our paw-print wrap and kitten boxes. Ready for a thank-you, a birthday, or just because.</p>
         <p class="kr">고양이 발 포장지와 상자에 담아 드려요. 선물은 온라인 스토어에서도 주문할 수 있어요.</p>
         <a class="btn" href="https://smartstore.naver.com/butterkitten" target="_blank" rel="noopener">Shop gifts online</a>
         <div class="wraps">
