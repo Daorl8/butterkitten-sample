@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Butter Kitten · 버터키튼 | A warm little dessert shop in Gongneung, Seoul</title>
+<meta name="description" content="Butter Kitten (버터키튼) — a warm, healing dessert shop with a cat at heart. Kitten dacquoise, financiers and seasonal cakes baked with French flour, gourmet butter and unrefined cane sugar. Gongneung, Nowon-gu, Seoul." />
+<meta name="theme-color" content="#FFFFFF" />
+
+<link rel="canonical" href="https://butterkitten-sample.lgt3232.workers.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Butter Kitten 버터키튼" />
+<meta property="og:title" content="Butter Kitten · 버터키튼" />
+<meta property="og:description" content="A warm little dessert shop with a cat at heart. 진심을 담은 따뜻한 치유의 디저트 가게." />
+<meta property="og:url" content="https://butterkitten-sample.lgt3232.workers.dev/" />
+<meta property="og:image" content="https://butterkitten-sample.lgt3232.workers.dev/og-butterkitten.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png" />
+
+<!-- 시안 도메인 = butterkitten-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 5곳 치환 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Butter Kitten",
+  "alternateName": "버터키튼",
+  "description": "A warm, healing dessert shop with a cat at heart. French flour, gourmet butter and unrefined cane sugar.",
+  "url": "https://butterkitten-sample.lgt3232.workers.dev/",
+  "image": "https://butterkitten-sample.lgt3232.workers.dev/og-butterkitten.jpg",
+  "telephone": "+82-70-8667-1890",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "동일로182길 36 1층 104호",
+    "addressLocality": "노원구",
+    "addressRegion": "서울특별시",
+    "addressCountry": "KR"
+  },
+  "servesCuisine": ["Dessert", "Bakery"],
+  "hasMap": "https://map.naver.com/p/entry/place/1934444317",
+  "sameAs": [
+    "https://www.instagram.com/butterkitten.bakery/",
+    "https://smartstore.naver.com/butterkitten",
+    "https://pf.kakao.com/_DsnwG"
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "12:00", "closes": "20:00" }
+  ]
+}
+</script>
+
+<!-- Fonts: 영문 필기체 Playwrite FR Moderne(Enfantine 대체·OFL) · 영문 본문 Ubuntu(포장지 글자와 동일 계열·UFL) = 로컬 서브셋 self-host / 한글 마루 부리(네이버 공식 CDN · 시안) -->
+<link rel="preload" as="font" type="font/woff2" href="playwrite-sub.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="ubuntu-400.woff2" crossorigin />
+<link rel="stylesheet" href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" />
+
+<style>
+@font-face{ font-family:"Playwrite FR"; font-style:normal; font-weight:400; font-display:swap; src:url("playwrite-sub.woff2") format("woff2"); }
+@font-face{ font-family:"Ubuntu"; font-style:normal; font-weight:400; font-display:swap; src:url("ubuntu-400.woff2") format("woff2"); }
+@font-face{ font-family:"Ubuntu"; font-style:normal; font-weight:500; font-display:swap; src:url("ubuntu-500.woff2") format("woff2"); }
+
+/* ============================================================
+   Butter Kitten (버터키튼) — 원페이지
+   포장지 문법: 흰 바탕 + 블랙 + 아이보리/베이지 포인트
+   고양이 = 시그니처: 고양이 머리 배지(포장지 MENU 모양) · 고양이 귀 버튼 · 고양이 머리 사진 마스크 · 발자국 배경
+   ============================================================ */
+:root{
+  --white:    #FFFFFF;
+  --ink:      #262626;   /* 로고 블랙 #363636보다 약간 진하게(본문 대비) */
+  --ink-soft: #5B574F;   /* 흰 바탕 7.2 */
+  --ivory:    #F6F2E6;   /* 섹션 바탕 */
+  --beige:    #E4D7BE;   /* 선·발자국·포인트 */
+  --line:     #E8E1D3;
+  --script: "Playwrite FR", "Ubuntu", "MaruBuri", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --sans:   "Ubuntu", "MaruBuri", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --kr:     "MaruBuri", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --maxw: 1120px;
+  --gut: clamp(20px, 5vw, 44px);
+  /* 발자국: 타일 안에 크기·각도 다르게 흩뿌림(군데군데) */
+  --paws: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='460' viewBox='0 0 460 460'%3E%3Cdefs%3E%3Cg id='p'%3E%3Cellipse cx='0' cy='6' rx='9' ry='7.5'/%3E%3Cellipse cx='-10' cy='-6' rx='3.6' ry='4.6'/%3E%3Cellipse cx='-3.6' cy='-11' rx='3.6' ry='4.6'/%3E%3Cellipse cx='3.6' cy='-11' rx='3.6' ry='4.6'/%3E%3Cellipse cx='10' cy='-6' rx='3.6' ry='4.6'/%3E%3C/g%3E%3C/defs%3E%3Cg fill='%23E4D7BE'%3E%3Cuse href='%23p' transform='translate(70 90) rotate(-18)'/%3E%3Cuse href='%23p' transform='translate(98 58) rotate(-10) scale(.9)'/%3E%3Cuse href='%23p' transform='translate(330 210) rotate(24) scale(.8)'/%3E%3Cuse href='%23p' transform='translate(200 380) rotate(-35) scale(.7)'/%3E%3Cuse href='%23p' transform='translate(228 352) rotate(-28) scale(.62)'/%3E%3C/g%3E%3C/svg%3E");
+  --cathead: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 100'%3E%3Cpath d='M12 46C9 28 12 10 20 3c7 5 14 13 19 21 7-3 14-4 21-4s14 1 21 4c5-8 12-16 19-21 8 7 11 25 8 43 4 7 7 15 7 23 0 20-24 29-55 29S5 89 5 69c0-8 3-16 7-23z'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{ margin:0; font-family:var(--sans); color:var(--ink); background:var(--white) var(--paws) 0 0 / 460px 460px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 var(--gut); }
+.kr{ font-family:var(--kr); }
+section[id]{ scroll-margin-top:64px; }
+
+/* ---------- 고양이 머리 배지 (포장지 MENU 모양) ---------- */
+.badge{ position:relative; display:inline-grid; place-items:center; width:118px; aspect-ratio:120/100; margin-bottom:14px; }
+.badge::before{ content:""; position:absolute; inset:0; background:var(--ink); -webkit-mask:var(--cathead) center/contain no-repeat; mask:var(--cathead) center/contain no-repeat; }
+.badge span{ position:relative; margin-top:18%; color:#fff; font-weight:500; font-size:1.08rem; letter-spacing:.06em; }
+.best{ display:inline-grid; place-items:center; position:relative; width:40px; aspect-ratio:120/100; vertical-align:-.35em; margin-left:6px; }
+.best::before{ content:""; position:absolute; inset:0; background:var(--ink); -webkit-mask:var(--cathead) center/contain no-repeat; mask:var(--cathead) center/contain no-repeat; }
+.best span{ position:relative; margin-top:14%; color:#fff; font-size:.66rem; font-weight:500; }
+
+/* ---------- 고양이 귀 버튼 ---------- */
+.btn{ position:relative; isolation:isolate; display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:.78em 1.4em; border-radius:10px; background:var(--ink); color:#fff; font-weight:500; font-size:.96rem; border:1.5px solid var(--ink); transition:transform .15s ease, background .15s ease; margin-top:10px; }
+.btn::before, .btn::after{ content:""; position:absolute; top:-9px; width:18px; height:18px; background:inherit; border-top:1.5px solid var(--ink); border-left:1.5px solid var(--ink); transform:rotate(45deg) skew(8deg,8deg); border-radius:3px 0 0 0; z-index:-1; }
+.btn::before{ left:14%; } .btn::after{ right:14%; }
+.btn.light{ background:#fff; color:var(--ink); }
+.btn:active{ transform:scale(.97); }
+.btn:focus-visible, .link:focus-visible{ outline:3px solid var(--beige); outline-offset:4px; }
+@media (hover:hover){ .btn:hover{ transform:translateY(-2px); } }
+.link{ display:inline-flex; align-items:center; gap:6px; font-weight:500; border-bottom:2px solid var(--beige); padding-bottom:1px; }
+
+/* ---------- header ---------- */
+.site-head{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); }
+.site-head .wrap{ display:flex; align-items:center; justify-content:space-between; gap:16px; height:60px; }
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand img{ width:46px; }
+.brand b{ font-family:var(--script); font-weight:400; font-size:1.12rem; }
+.nav{ display:flex; align-items:center; gap:clamp(14px,2.2vw,28px); }
+.nav a:not(.btn){ font-size:.93rem; color:var(--ink-soft); }
+.nav a:not(.btn):hover{ color:var(--ink); }
+.nav .btn{ margin-top:0; padding:.55em 1.1em; font-size:.88rem; }
+.nav .btn::before, .nav .btn::after{ width:13px; height:13px; top:-6px; }
+@media (max-width:820px){ .nav a:not(.btn){ display:none; } }
+
+/* ---------- hero ---------- */
+.hero{ padding:clamp(40px,7vw,80px) 0 clamp(56px,8vw,96px); }
+.hero-grid{ display:grid; gap:40px; align-items:center; }
+.hero-logo{ width:min(72%,300px); }
+.hero .place{ font-size:.84rem; color:var(--ink-soft); letter-spacing:.04em; margin:22px 0 6px; }
+.hero h1{ font-family:var(--script); font-weight:400; font-size:clamp(1.7rem,4.6vw,2.7rem); line-height:1.45; margin:0 0 14px; }
+.hero .kr-lead{ font-family:var(--kr); color:var(--ink-soft); font-size:1rem; margin:0 0 18px; word-break:keep-all; }
+.hero-cta{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.cat-photo{ width:100%; max-width:520px; margin:0 auto; aspect-ratio:120/100; }
+.cat-photo img{ width:100%; height:100%; object-fit:cover; -webkit-mask:var(--cathead) center/contain no-repeat; mask:var(--cathead) center/contain no-repeat; }
+
+/* ---------- section common ---------- */
+.sec{ padding:clamp(72px,11vw,120px) 0; }
+.sec.ivory{ background:var(--ivory); }
+.sec-head{ text-align:center; margin-bottom:clamp(30px,5vw,52px); }
+.sec-head h2{ font-family:var(--script); font-weight:400; font-size:clamp(1.6rem,4.2vw,2.5rem); line-height:1.4; margin:0 0 8px; }
+.sec-head p{ font-family:var(--kr); color:var(--ink-soft); margin:0; font-size:.96rem; }
+
+/* ---------- story ---------- */
+.story-grid{ display:grid; gap:40px; align-items:center; }
+.story p{ margin:0 0 1em; color:var(--ink-soft); }
+.story p.kr{ font-size:.95rem; line-height:1.85; word-break:keep-all; }
+.story p b{ color:var(--ink); font-weight:500; }
+.ingr{ list-style:none; margin:26px 0 0; padding:0; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
+.ingr li{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:12px 2px; }
+.ingr li + li{ border-top:1px solid var(--line); }
+.ingr b{ font-weight:500; }
+.ingr span{ font-family:var(--kr); font-size:.88rem; color:var(--ink-soft); }
+.story-art img{ width:100%; max-width:440px; margin:0 auto; }
+
+/* ---------- menu ---------- */
+.menu-grid{ display:grid; gap:18px; }
+.item{ margin:0; background:#fff; }
+.item img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
+.item figcaption{ padding:18px 18px 22px; }
+.item h3{ margin:0; font-weight:500; font-size:1.15rem; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; }
+.item h3 .kr{ font-size:.86rem; font-weight:400; color:var(--ink-soft); }
+.item p{ margin:6px 0 0; font-size:.93rem; color:var(--ink-soft); }
+.flav{ margin:10px 0 0; padding:0; list-style:none; font-size:.92rem; }
+.flav li{ display:inline-flex; align-items:center; margin-right:14px; }
+.season{ margin:34px auto 0; max-width:640px; text-align:center; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); padding:18px 10px; }
+.season b{ display:block; font-family:var(--script); font-weight:400; font-size:1.3rem; margin-bottom:4px; }
+.season span{ color:var(--ink-soft); }
+.note{ text-align:center; margin:22px auto 0; max-width:36em; font-size:.9rem; color:var(--ink-soft); }
+.note .kr{ display:block; margin-top:4px; }
+
+/* ---------- gift ---------- */
+.gift-grid{ display:grid; gap:36px; align-items:center; }
+.perch{ position:relative; max-width:360px; margin:0 auto 0; }
+.perch img{ width:100%; animation:bob 4s ease-in-out infinite; transform-origin:50% 100%; }
+.perch::after{ content:""; display:block; height:1.5px; background:var(--ink); margin-top:-1px; }
+@keyframes bob{ 0%,100%{ transform:rotate(0deg); } 50%{ transform:rotate(-2deg) translateY(-3px); } }
+.gift h2{ font-family:var(--script); font-weight:400; font-size:clamp(1.5rem,4vw,2.3rem); line-height:1.4; margin:0 0 12px; }
+.gift p{ color:var(--ink-soft); margin:0 0 .8em; }
+.gift p.kr{ font-size:.95rem; word-break:keep-all; }
+.wraps{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:22px; }
+.wraps img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
+
+/* ---------- gallery ---------- */
+.gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+.gallery img{ width:100%; height:100%; aspect-ratio:1/1; object-fit:cover; }
+.gallery .tall img{ aspect-ratio:4/5; }
+
+/* ---------- film ---------- */
+.film-frame{ position:relative; width:100%; max-width:860px; margin:0 auto; aspect-ratio:16/9; background:var(--ink); }
+.film-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.film-cap{ text-align:center; margin-top:14px; font-size:.9rem; color:var(--ink-soft); }
+
+/* ---------- visit ---------- */
+.visit-grid{ display:grid; gap:30px; }
+.info{ margin:0; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
+.info .row{ display:grid; grid-template-columns:84px 1fr; gap:12px; padding:14px 2px; }
+.info .row + .row{ border-top:1px solid var(--line); }
+.info dt{ font-weight:500; }
+.info dd{ margin:0; }
+.info dd .kr{ display:block; font-size:.88rem; color:var(--ink-soft); margin-top:2px; word-break:keep-all; }
+.info a.tel{ border-bottom:2px solid var(--beige); }
+.visit .acts{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:22px; }
+.mapframe{ width:100%; aspect-ratio:4/3; border:0; border-top:1.5px solid var(--ink); display:block; background:var(--ivory); }
+
+/* ---------- footer ---------- */
+.foot{ background:var(--ink); color:#fff; padding:52px 0 48px; }
+.foot .wrap{ display:grid; gap:24px; }
+.foot-brand{ display:flex; align-items:center; gap:12px; }
+.foot-brand .mk{ width:64px; aspect-ratio:120/100; display:grid; place-items:center; background:#fff; -webkit-mask:var(--cathead) center/contain no-repeat; mask:var(--cathead) center/contain no-repeat; }
+.foot-brand .mk img{ width:72%; margin-top:22%; }
+.foot-brand b{ font-family:var(--script); font-weight:400; font-size:1.4rem; }
+.foot-links{ display:flex; flex-wrap:wrap; gap:8px 22px; margin:0; padding:0; list-style:none; }
+.foot-links a{ border-bottom:1px solid rgba(255,255,255,.45); }
+.foot p{ margin:0; font-size:.86rem; color:rgba(255,255,255,.82); }
+
+/* ---------- motion (강제 재생 — '동작 줄이기' 설정 무관) ---------- */
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
+.reveal.in{ opacity:1; transform:none; }
+
+/* ---------- ≥720 ---------- */
+@media (min-width:720px){
+  .menu-grid{ grid-template-columns:repeat(3,1fr); gap:22px; }
+  .gallery{ grid-template-columns:repeat(4,1fr); gap:10px; }
+  .gallery .tall{ grid-row:span 2; }
+  .gallery .tall img{ aspect-ratio:auto; }
+}
+/* ---------- ≥960 PC ---------- */
+@media (min-width:960px){
+  .hero-grid{ grid-template-columns:1fr 1fr; gap:56px; }
+  .story-grid{ grid-template-columns:1.1fr .9fr; gap:72px; }
+  .gift-grid{ grid-template-columns:.8fr 1.2fr; gap:64px; }
+  .visit-grid{ grid-template-columns:.95fr 1.05fr; gap:56px; align-items:start; }
+  .foot .wrap{ grid-template-columns:1fr auto; align-items:end; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Butter Kitten home"><img src="bk-mark.webp" alt="" width="949" height="551" /><b>Butter Kitten</b></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#story">Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#gift">Gift</a>
+      <a href="#film">Film</a>
+      <a href="#visit">Visit</a>
+      <a class="btn" href="https://smartstore.naver.com/butterkitten" target="_blank" rel="noopener">Order</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <img class="hero-logo" src="bk-logo.webp" alt="Butter Kitten 버터키튼 logo — a tuxedo cat" width="1106" height="993" />
+      <p class="place">DESSERT CAFÉ · GONGNEUNG, SEOUL</p>
+      <h1>A warm little dessert shop,<br />baked with heart.</h1>
+      <p class="kr-lead">진심을 담은 따뜻한 치유의 디저트 가게, 버터키튼입니다.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://smartstore.naver.com/butterkitten" target="_blank" rel="noopener">Order online</a>
+        <a class="link" href="https://pf.kakao.com/_DsnwG" target="_blank" rel="noopener">Reserve on Kakao →</a>
+      </div>
+    </div>
+    <div class="cat-photo reveal">
+      <img src="bk-dacq.webp" alt="Cat-shaped dacquoise with yellow cream, arranged in rows" width="1080" height="1350" />
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- ============ STORY ============ -->
+  <section class="sec story" id="story" aria-labelledby="story-h">
+    <div class="wrap story-grid">
+      <div class="reveal">
+        <div class="badge" aria-hidden="true"><span>STORY</span></div>
+        <h2 id="story-h" style="font-family:var(--script);font-weight:400;font-size:clamp(1.6rem,4.2vw,2.5rem);line-height:1.4;margin:0 0 16px">Small as a slice of cake,<br />warm as a sleeping cat.</h2>
+        <p>Butter Kitten is a tiny dessert shop — about the size of a slice of cake. We bake <b>seasonal menus with the season’s ingredients</b>, and little treats that look cute but taste refined.</p>
+        <p>We hope everyone who visits feels at ease and a little warmer, and that our desserts bring some happiness to the end of your day.</p>
+        <p class="kr">프랑스 밀가루, 고메버터, 비정제원당을 사용하여 맛있고 건강하게 만들고 있습니다. 버터키튼 공간 안에서 느낄 수 있는 포근함과 따스함으로, 오시는 모든 분들의 하루 끝에 행복을 전하는 디저트가 되었으면 합니다.</p>
+        <ul class="ingr" aria-label="Our ingredients">
+          <li><b>French flour</b><span>프랑스 밀가루</span></li>
+          <li><b>Gourmet butter</b><span>고메버터</span></li>
+          <li><b>Unrefined cane sugar</b><span>비정제원당</span></li>
+        </ul>
+      </div>
+      <div class="story-art reveal">
+        <img loading="lazy" src="bk-paws.webp" alt="Illustration: many cat paws reaching for a slice of buttered toast marked Butter Kitten" width="1000" height="1000" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="sec ivory" id="menu" aria-labelledby="menu-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="badge" aria-hidden="true"><span>MENU</span></div>
+        <h2 id="menu-h">Baked for little paws</h2>
+        <p>귀엽지만 고급스러운 맛</p>
+      </div>
+      <div class="menu-grid">
+        <figure class="item reveal">
+          <img loading="lazy" src="bk-dacq-pink.webp" alt="Cat-face dacquoise filled with pink cream on a pink background" width="1080" height="1350" />
+          <figcaption><h3>Kitten Dacquoise <span class="kr">고양이 다쿠아즈</span></h3><p>Our cat-face dacquoise, filled with a different cream each season.</p></figcaption>
+        </figure>
+        <figure class="item reveal">
+          <img loading="lazy" src="bk-financier.webp" alt="Golden financiers on a beige background" width="1080" height="1350" />
+          <figcaption><h3>Financier <span class="kr">피낭시에</span></h3>
+            <ul class="flav"><li>Plain <span class="best" aria-label="best"><span>Best</span></span></li><li>Black Sesame</li></ul>
+            <p>and more, from our menu card.</p></figcaption>
+        </figure>
+        <figure class="item reveal">
+          <img loading="lazy" src="bk-cake.webp" alt="A small white cream cake topped with strawberries and blueberries" width="1080" height="1350" />
+          <figcaption><h3>Seasonal Cake <span class="kr">시즌 케이크</span></h3><p>Small cakes made with the season’s fruit.</p></figcaption>
+        </figure>
+      </div>
+      <div class="season reveal">
+        <b>This season, too</b>
+        <span>Dubai Chocolate · White Lemon Galette · and whatever the season brings</span>
+      </div>
+      <p class="note">Our menu changes with the seasons — see today’s line-up on <a class="link" href="https://www.instagram.com/butterkitten.bakery/" target="_blank" rel="noopener">Instagram</a> or our <a class="link" href="https://smartstore.naver.com/butterkitten" target="_blank" rel="noopener">online store</a>.<span class="kr">메뉴와 가격은 시기마다 달라질 수 있어요.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ GIFT ============ -->
+  <section class="sec gift" id="gift" aria-labelledby="gift-h">
+    <div class="wrap gift-grid">
+      <div class="perch reveal"><img loading="lazy" src="bk-cat-butter.webp" alt="Illustration: a tuxedo cat hugging a big block of butter" width="900" height="722" /></div>
+      <div class="reveal">
+        <div class="badge" aria-hidden="true"><span>GIFT</span></div>
+        <h2 id="gift-h">Wrapped with little paws</h2>
+        <p>Every treat goes home in our paw-print wrap and kitten boxes — ready for a thank-you, a birthday, or just because.</p>
+        <p class="kr">고양이 발 포장지와 상자에 담아 드려요. 선물은 온라인 스토어에서도 주문할 수 있어요.</p>
+        <a class="btn" href="https://smartstore.naver.com/butterkitten" target="_blank" rel="noopener">Shop gifts online</a>
+        <div class="wraps">
+          <img loading="lazy" src="bk-wrap.webp" alt="Paper bags printed with black and orange cat paws" width="1080" height="1350" />
+          <img loading="lazy" src="bk-wrap2.webp" alt="A pile of wrapped treats with cat-paw prints" width="1080" height="1350" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="sec ivory" id="gallery" aria-labelledby="gallery-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 id="gallery-h">From our little kitchen</h2>
+        <p>매일 굽는 작은 행복</p>
+      </div>
+      <div class="gallery reveal">
+        <div class="tall"><img loading="lazy" src="bk-dacq-green.webp" alt="Cat dacquoise with green cream" width="1080" height="1350" /></div>
+        <div><img loading="lazy" src="bk-dacq-cream.webp" alt="Cat dacquoise shells piped with yellow cream" width="960" height="960" /></div>
+        <div><img loading="lazy" src="bk-showcase.webp" alt="Cat dacquoise lined up in the showcase" width="1200" height="960" /></div>
+        <div class="tall"><img loading="lazy" src="bk-cake2.webp" alt="A small cake topped with a strawberry on a red background" width="1080" height="1350" /></div>
+        <div><img loading="lazy" src="bk-dacq-matcha.webp" alt="Cat shells with matcha cream swirls" width="957" height="960" /></div>
+        <div><img loading="lazy" src="bk-financier2.webp" alt="Crumble-topped financiers on an orange background" width="1080" height="1350" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FILM ============ -->
+  <section class="sec" id="film" aria-labelledby="film-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="badge" aria-hidden="true"><span>FILM</span></div>
+        <h2 id="film-h">Meet us on film</h2>
+        <p>공릉동 베이커리 버터키튼</p>
+      </div>
+      <div class="film-frame reveal">
+        <iframe src="https://www.youtube-nocookie.com/embed/SW9fu1NH4tk" title="공릉동 베이커리 버터키튼 — YouTube" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p class="film-cap">Featured by <a class="link" href="https://www.youtube.com/watch?v=SW9fu1NH4tk" target="_blank" rel="noopener">공릉동 장사하는 사람들</a></p>
+    </div>
+  </section>
+
+  <!-- ============ VISIT ============ -->
+  <section class="sec ivory visit" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="badge" aria-hidden="true"><span>VISIT</span></div>
+        <h2 id="visit-h">Come say hello</h2>
+        <p>공릉역 2번 출구에서 걸어서 약 7분</p>
+      </div>
+      <div class="visit-grid">
+        <div class="reveal">
+          <dl class="info">
+            <div class="row"><dt>Address</dt><dd>1F #104, 36 Dongil-ro 182-gil,<br />Nowon-gu, Seoul<span class="kr">서울 노원구 동일로182길 36 1층 104호</span></dd></div>
+            <div class="row"><dt>Subway</dt><dd>Gongneung Stn. (Line 7), Exit 2 · 477 m<span class="kr">7호선 공릉역 2번 출구</span></dd></div>
+            <div class="row"><dt>Hours</dt><dd>Mon – Sat 12:00 – 20:00<span class="kr">일요일 정기휴무 · Closed on Sundays</span></dd></div>
+            <div class="row"><dt>Call</dt><dd><a class="tel" href="tel:070-8667-1890">070-8667-1890</a></dd></div>
+            <div class="row"><dt>Reserve</dt><dd>Kakao Channel<span class="kr">예약·문의는 카카오톡 채널로</span></dd></div>
+          </dl>
+          <div class="acts">
+            <a class="btn" href="https://pf.kakao.com/_DsnwG" target="_blank" rel="noopener">Reserve on Kakao</a>
+            <a class="link" href="https://map.naver.com/p/entry/place/1934444317" target="_blank" rel="noopener">Naver Map →</a>
+          </div>
+        </div>
+        <iframe class="mapframe" src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EB%85%B8%EC%9B%90%EA%B5%AC%20%EB%8F%99%EC%9D%BC%EB%A1%9C182%EA%B8%B8%2036&output=embed" title="Butter Kitten location map — 서울 노원구 동일로182길 36" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <div class="foot-brand"><span class="mk" aria-hidden="true"><img src="bk-mark.webp" alt="" width="949" height="551" /></span><b>Butter Kitten</b></div>
+      <p style="margin-top:12px" class="kr">진심을 담은 따뜻한 치유의 디저트 가게</p>
+    </div>
+    <div>
+      <ul class="foot-links">
+        <li><a href="https://smartstore.naver.com/butterkitten" target="_blank" rel="noopener">Online store</a></li>
+        <li><a href="https://pf.kakao.com/_DsnwG" target="_blank" rel="noopener">Kakao</a></li>
+        <li><a href="https://www.instagram.com/butterkitten.bakery/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/watch?v=SW9fu1NH4tk" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+      <p style="margin-top:14px">서울 노원구 동일로182길 36 1층 104호 · 070-8667-1890 · Mon–Sat 12–20</p>
+      <p>© 2026 Butter Kitten 버터키튼</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.reveal'));
+  var show=function(el){ el.classList.add('in'); };
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } }); }, {threshold:.06});
+    items.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ items.forEach(show); }, 2400);
+  } else { items.forEach(show); }
+
+  var head=document.querySelector('.site-head');
+  var ease=function(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; };
+  document.addEventListener('click', function(ev){
+    var a=ev.target.closest && ev.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute('href');
+    var target=(id==='#'||id==='#top') ? document.body : document.querySelector(id); if(!target) return;
+    ev.preventDefault();
+    var off=(head?head.offsetHeight:0)+6, startY=window.pageYOffset;
+    var endY=target===document.body?0:Math.max(0,target.getBoundingClientRect().top+startY-off);
+    var dist=endY-startY, dur=Math.min(900,Math.max(420,Math.abs(dist)*.45)), t0=null;
+    function step(ts){ if(t0===null) t0=ts; var p=Math.min(1,(ts-t0)/dur); window.scrollTo(0,startY+dist*ease(p)); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+    if(history.replaceState) history.replaceState(null,'',id);
+  });
+})();
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
